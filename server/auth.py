@@ -10,7 +10,6 @@ from schemas import LoginSchema, SignupSchema, format_errors
 
 
 def make_auth_response(user, status):
-    # JWT subject must be a string in newer PyJWT versions; we convert back with int() on read.
     token = create_access_token(identity=str(user.id))
     return {"token": token, "user": user.to_dict()}, status
 

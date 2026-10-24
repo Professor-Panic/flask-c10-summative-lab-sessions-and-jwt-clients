@@ -1,4 +1,3 @@
-"""Populate the database with example users and notes: `python seed.py`."""
 from faker import Faker
 
 from app import app
@@ -13,7 +12,7 @@ def seed():
     User.query.delete()
 
     users = []
-    for name in ("alice", "bob", "carol"):
+    for name in ("tedd", "ian", "carol"):
         user = User(username=name)
         user.password_hash = "password123"
         db.session.add(user)
@@ -30,7 +29,7 @@ def seed():
                 )
             )
     db.session.commit()
-    print("Seeded users alice, bob, carol (password: password123), 15 notes each.")
+    print("Seeded users tedd, ian, carol (password: password123), 15 notes each.")
 
 
 if __name__ == "__main__":

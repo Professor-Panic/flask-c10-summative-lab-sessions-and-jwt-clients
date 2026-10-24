@@ -15,11 +15,6 @@ def current_user_id():
 
 
 def get_owned_note(note_id):
-    """Return the note only if it belongs to the current user.
-
-    Filtering by user_id means another user's note is indistinguishable from a
-    missing one, so we answer 404 and never reveal that it exists.
-    """
     return Note.query.filter_by(id=note_id, user_id=current_user_id()).first()
 
 

@@ -1,4 +1,3 @@
-"""Marshmallow schemas used to validate incoming request bodies."""
 from marshmallow import Schema, ValidationError, fields, validate, validates_schema
 
 
